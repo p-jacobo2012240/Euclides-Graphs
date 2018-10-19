@@ -1,0 +1,26 @@
+{
+  "name": "dijkstra",
+  "version": "1.0.0",
+  "description": "Matematica Discreta UMG2018",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app",
+    "nodemon": "nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-jacobo2012240/Euclides-Graphs.git"
+  },
+  "author": "Pablo JSanchez hackobo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/p-jacobo2012240/Euclides-Graphs/issues"
+  },
+  "homepage": "https://github.com/p-jacobo2012240/Euclides-Graphs#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.1",
+    "nodemon": "^1.18.4"
+  }
+}
