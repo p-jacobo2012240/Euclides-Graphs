@@ -1,4 +1,3 @@
-console.log('este es el controlador de Grafos')
 $(document).ready(function () {
 
     let nodesAux = [];
