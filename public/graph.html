@@ -4,19 +4,24 @@
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                <link rel="stylesheet" href="animate.min.css">   
+                
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
                 <title>Euclides y grafos</title>
                 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+                <!-- Bootstrap core CSS -->
+                 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
-        <!-- Custom styles for this template -->
-        <link href="css/simple-sidebar.css" rel="stylesheet">
-    
+                 <!-- Custom styles for this template -->
+                <link href="css/djk.css" rel="stylesheet">
+
+                <!-- Cytpscpé -->
+                <script src="js/cytoscape.min.js"></script>
+                <script src="https://cdn.rawgit.com/cpettitt/dagre/v0.7.4/dist/dagre.min.js"></script>
+                <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-dagre/1.5.0/cytoscape-dagre.js"></script>
+                
                 <!-- Image and text -->
                 <nav class="navbar navbar-light bg-light">
                     <a class="navbar-brand" href="index.html">
@@ -25,58 +30,23 @@
                     </a>
                   </nav>
             </head>
-<body>
-    
-        <div id="wrapper">
-                
-                        <!-- Sidebar -->
-                        <div id="sidebar-wrapper">
-                            <ul class="sidebar-nav">
-                                <li class="sidebar-brand">
-                                    <a href="#">
-                                        Funcionalidades
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">Elegir un grafo</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hacer mi Grafo</a>
-                                </li>
-                                <li>
-                                    <a href="#">Ayuda</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- /#sidebar-wrapper -->
-                
-                        <!-- Page Content -->
-                        <div id="page-content-wrapper">
-                            <div class="container-fluid">
-                                <h1>Es hora de comenzar</h1>
-                                <p>En el boton inferior de <code>Opciones</code> podras conocer todas las Funcionalidades</p>
-                                <p>Crea o eleige la forma a calcular, Genial no lo Crees! .</p>
-                                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Opciones</a>
-                            </div>
-                        </div>
-                        <!-- /#page-content-wrapper -->
-                
-                    </div>
-                    <!-- /#wrapper -->
-                
-                    <!-- Bootstrap core JavaScript -->
-                    <script src="vendor/jquery/jquery.min.js"></script>
-                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                
-                    <!-- Menu Toggle Script -->
-                    <script>
-                    $("#menu-toggle").click(function(e) {
-                        e.preventDefault();
-                        $("#wrapper").toggleClass("toggled");
-                    });
-                    </script>
-                
-                </body>
-                
+    <body>
+        
+        <form class="form-signin" id="formGrafos" >
+            <input id="inputDesde" class="form-control" type="number" placeholder="Desde">
+            <input id="inputHacia" class="form-control" type="number" placeholder="Hasta">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" >Agregar</button>
+        </form>
+        <div class="row">
+            <div id="cy"></div>
+          </div>
+         
+       
+        <script src="./js/djk.js" ></script>               
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 </html>
