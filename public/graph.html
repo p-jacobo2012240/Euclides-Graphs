@@ -16,12 +16,19 @@
     <a href="index.html">HOME MOMENTANEO</a>
   </head>
 <body>
-     
+  
+  <section onsubmit="caminomascorto()" >
+    <form class="form-signin">
+      <input id="numerito" type="number">
+      <input type="submit" value="Geenrar" >
+    </form>  
+  </section>
+    
   <section onsubmit="grafo()">
     <form class="form-signin">
-      <input id="inputDesde" class="form-control"  type="number"/>
-     <input id="inputHacia" class="form-control" type="number"/>
-     <input type="submit" class="form-control" value="          Dibujar grafo              ">
+      <input id="inD" class="form-control"  type="number" placeholder="De donde viene" />
+     <input id="inH" class="form-control" type="number"   placeholder="A donde va" />
+      <input type="submit" class="form-control" value="          Dibujar grafo              ">
     </form>
   </section>
   <div class="row">

@@ -1,16 +1,20 @@
 console.log('este es el controlador de Grafos')
 
-var xdesde = document.getElementById("inputDesde")
-var xhacia = document.getElementById("inputHacia") 
+var xdesde = document.getElementById("inD")
+var xhacia = document.getElementById("inH") 
+var numer = document.getElementById("numerito")
 
-var nodesAux = [];  
-var edgesAux = [];
+var nodos = [];  
+var lineas = [];
+
+var camino_mas_corto = [];
+var costo = new Array();
 
 function grafo(){
     event.preventDefault() 
     var obj = {
-        xdesde : inputDesde.value,
-        xhacia : inputHacia.value
+        xdesde : inD.value,
+        xhacia : inH.value
     }
 
     let desde = obj.xdesde;
@@ -18,9 +22,9 @@ function grafo(){
 
     console.log(obj)
   
-    nodesAux.push({ data: { id: desde } });
-    nodesAux.push({ data: { id: hacia } });
-    edgesAux.push({ data: { source: desde, target: hacia } });
+    nodos.push({ data: { id: desde } });
+    nodos.push({ data: { id: hacia } });
+    lineas.push({ data: { source: desde, target: hacia } });
 
     window.cy = cytoscape({
         container: document.getElementById('cy'),
@@ -55,13 +59,31 @@ function grafo(){
         ],
 
         elements: {
-            nodes: [...nodesAux],
-            edges: [...edgesAux]
+            nodes: [...nodos],
+            edges: [...lineas]
         },
     });
 
-    $("#inputDesde").val("");
-    $("#inputHacia").val("");
+    $("#inD").val("");
+    $("#inH").val("");
 } 
 
+function caminomascorto(){
+    event.preventDefault();
+    var cam_cort = {
+        numer: numerito.value    
+    }
+    let n =  cam_cort.numer
+    let pars = conv_dat(n)
+   
+    for(var i=1; i<=pars; i++ ){
+        let non = prompt('Ingrese un numero')
+        costo.push(non)
+    }
+    console.log(costo)
+}
 
+function conv_dat(x){
+    let resp = parseInt(x)
+    return resp
+}
