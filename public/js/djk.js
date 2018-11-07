@@ -1,64 +1,67 @@
 console.log('este es el controlador de Grafos')
-$(document).ready(function () {
 
-    let nodesAux = [];
-    let edgesAux = [];
+var xdesde = document.getElementById("inputDesde")
+var xhacia = document.getElementById("inputHacia") 
 
-      console.log(edgesAux)
-      console.log(nodesAux)
-      
-    $("#formGrafos").submit(function (event) {
-        let desde = $("#inputDesde").val();
-        let hacia = $("#inputHacia").val();
+var nodesAux = [];  
+var edgesAux = [];
 
-        nodesAux.push({ data: { id: desde } });
-        nodesAux.push({ data: { id: hacia } });
-        edgesAux.push({ data: { source: desde, target: hacia } });
+function grafo(){
+    event.preventDefault() 
+    var obj = {
+        xdesde : inputDesde.value,
+        xhacia : inputHacia.value
+    }
 
+    let desde = obj.xdesde;
+    let hacia = obj.xhacia;
 
-        window.cy = cytoscape({
-            container: document.getElementById('cy'),
-            boxSelectionEnabled: false,
-            autounselectify: true,
-            layout: {
-                name: 'dagre'
-            },
+    console.log(obj)
+  
+    nodesAux.push({ data: { id: desde } });
+    nodesAux.push({ data: { id: hacia } });
+    edgesAux.push({ data: { source: desde, target: hacia } });
 
-            style: [
-                {
-                    selector: 'node',
-                    style: {
-                        'content': 'data(id)',
-                        'text-opacity': 0.5,
-                        'text-valign': 'center',
-                        'text-halign': 'right',
-                        'background-color': '#11479e'
-                    }
-                },
+    window.cy = cytoscape({
+        container: document.getElementById('cy'),
+        boxSelectionEnabled: false,
+        autounselectify: true,
+        layout: {
+            name: 'dagre'
+        },
 
-                {
-                    selector: 'edge',
-                    style: {
-                        'curve-style': 'bezier',
-                        'width': 4,
-                        'target-arrow-shape': 'triangle',
-                        'line-color': '#9dbaea',
-                        'target-arrow-color': '#9dbaea'
-                    }
+        style: [
+            {
+                selector: 'node',
+                style: {
+                    'content': 'data(id)',
+                    'text-opacity': 0.5,
+                    'text-valign': 'center',
+                    'text-halign': 'right',
+                    'background-color': '#11479e'
                 }
-            ],
-
-            elements: {
-                nodes: [...nodesAux],
-                edges: [...edgesAux]
             },
-        });
 
-        console.log(window.cy._private)
+            {
+                selector: 'edge',
+                style: {
+                    'curve-style': 'bezier',
+                    'width': 4,
+                    'target-arrow-shape': 'triangle',
+                    'line-color': '#9dbaea',
+                    'target-arrow-color': '#9dbaea'
+                }
+            }
+        ],
 
-        $("#inputDesde").val("");
-        $("#inputHacia").val("");
-
-        event.preventDefault();
+        elements: {
+            nodes: [...nodesAux],
+            edges: [...edgesAux]
+        },
     });
-});
+
+    $("#inputDesde").val("");
+    $("#inputHacia").val("");
+} 
+
+

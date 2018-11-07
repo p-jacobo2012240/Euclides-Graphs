@@ -20,45 +20,58 @@
             </head>
 <body>
     
-        <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>Es hora de comenzar</h1>
-                    <p>En el boton inferior de <code>Empezar</code> podras conocer todas las Funcionalidades</p>
-                    <p>Crea o eleige la forma a calcular, Genial no lo Crees! .</p>
-
-                    <section onsubmit="validarNumero()" id="contenedor_matriz" >
-                      <form class="form-signin">
-                       <input id="numerito"    class="form-control" type="number" placeholder="ingrese el numero de datos a evaluar ">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit" >Acceder</button>
-                      </form>
-
-                    </section>  
-                   
-                </div>
-            </div>
-      
-            <div class="modal fade" id="modaldosados" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Ingresa tus valores</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-          
-                  <div class="modal-body" >
+  <section onsubmit="euclides()" id="contenedor_matriz" >
+    <form class="form-signin">
+    <input id="totaldos" class="form-control" type="number" placeholder="ingrese el # de columnas">
+     <button class="btn btn-lg btn-primary btn-block" type="submit" >Procesar</button>
+    </form>
+  </section>
+  
+    <!-- DATA INICIO  -->
+    <div class="modal fade" id="modaleuc" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Ingresa tus valores</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+  
+          <div class="modal-body" onsubmit="resolver" >
+              <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">MCD Euclides</th>
                       
-                  </div>  <label for="basic-url">¿Cuantas cantidades desea Evaluar?</label>
-                  <div class="input-group mb-3">
-                    
-                    <input type="number" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="Ejemplo: 2, 4, 8" >
-                  </div>
-               </div>
-              </div>
-            </div>      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <form onsubmit="resolver(event)" >
+                    <tr>
+                      <th scope="row">1</th>
+                      <td><div id="celmatrix"><input id="dato1" type="number"  ></div></td>
+                     
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td><div id="celmatrix"><input id="dato2" type="number"  ></div></td>
+                     
+                    </tr>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" >Procesar</button>
+                  </section>
+                </tbody>
+              </form>
+                </table>
+          </div>
+       </div>
+      </div>
+    </div>
+    <!--DATA -->
 
-      <script type="text/javascript" src="./controllers/mcd.js"></script>
+      
+      <script type="text/javascript" src="euc.js"></script>
 
 </body>
 </html>
