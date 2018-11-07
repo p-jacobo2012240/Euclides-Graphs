@@ -4,7 +4,9 @@ $(document).ready(function () {
     let nodesAux = [];
     let edgesAux = [];
 
-
+      console.log(edgesAux)
+      console.log(nodesAux)
+      
     $("#formGrafos").submit(function (event) {
         let desde = $("#inputDesde").val();
         let hacia = $("#inputHacia").val();
@@ -12,6 +14,7 @@ $(document).ready(function () {
         nodesAux.push({ data: { id: desde } });
         nodesAux.push({ data: { id: hacia } });
         edgesAux.push({ data: { source: desde, target: hacia } });
+
 
         window.cy = cytoscape({
             container: document.getElementById('cy'),
@@ -50,6 +53,8 @@ $(document).ready(function () {
                 edges: [...edgesAux]
             },
         });
+
+        console.log(window.cy._private)
 
         $("#inputDesde").val("");
         $("#inputHacia").val("");
