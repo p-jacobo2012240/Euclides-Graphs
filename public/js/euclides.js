@@ -35,27 +35,32 @@ function resolver(){
     let dat1 = ob2.val1
     let dat2 = ob2.val2
 
+    let q =  Math.round(dat1 / dat2)
+    let r = dat1 % dat2
+
     console.log(ob2)
-    
+    console.log(`tu cociente es ${q } y tu divisor es ${ r}`)
+
     let rest = euc(dat1, dat2)
+    //let divis = div_dat1(dat1, dat2 )
+
+    console.log('tu resultado de euclides es' + rest)
     
-    console.log(rest)
 }
 
 
 function  euc( n_1, n_2){
-    return (!n_2) ? n_1 : euc(n_2 , n_1 % n_2);
+    return (!n_2) ? n_1 : euc(n_2 , n_1 % n_2)
 }
 
-
-/*
-int mcd(int x , int y){
-  int t;
-  x = (x < 0) ? -x:x;
-  y = (y < 0) ? -y:y;
-  t = (x < y) ? x : y;
-  while ( (x % t) || (y % t))
-    --t;
-  return t;
+//Dividiendo dato_1
+function div_dat1( n_1, n_2 ){
+    if( n_1 < n_2 ){
+        return 0
+    }else{
+        return 1 + div_dat1(n_1 -n_2, n_2 )
+    }
 }
-*/
+
+//Dividiendo dato_2
+
