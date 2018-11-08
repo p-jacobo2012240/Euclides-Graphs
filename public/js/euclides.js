@@ -35,11 +35,19 @@ function resolver(){
     let dat1 = ob2.val1
     let dat2 = ob2.val2
 
-    let q =  Math.round(dat1 / dat2)
-    let r = dat1 % dat2
+    let q =  Math.round(dat1 / dat2)  // 4
+    let r = dat1 % dat2               // 20  
+
+    let sq = Math.round( dat2 / r  - 0.25 )    // 3 
+    let sr = dat2 % r                          // 10
+
+    let tq = Math.round( r / sr )  //2
+    let tc = r % sr                //0  -->detente 
 
     console.log(ob2)
-    console.log(`tu cociente es ${q } y tu divisor es ${ r}`)
+    console.log(`tu cociente es * ${q } y tu divisor es +  ${ r}`)
+    console.log(`seugnda pasada tu cociente es ${sq} y tu divisor es ${sr}`) 
+    console.log(`tercera pasada tu cociente es ${tq} y tu divisor es ${tc}` )
 
     let rest = euc(dat1, dat2)
     //let divis = div_dat1(dat1, dat2 )
