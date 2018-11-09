@@ -44,12 +44,26 @@ function resolver(){
     let tq = Math.round( r / sr )  //2
     let tc = r % sr                //0  -->detente 
 
+    let rest = euc(dat1, dat2)
+
+    document.getElementById("td_n1").innerHTML = dat1 
+    document.getElementById("td_n2").innerHTML = dat2
+    document.getElementById("td_c1").innerHTML = q
+    document.getElementById("td_r1").innerHTML = r
+    document.getElementById("td_c2").innerHTML = sq
+    document.getElementById("td_n3").innerHTML = r 
+    document.getElementById("td_r2").innerHTML = sr 
+    document.getElementById("td_r2").innerHTML = sr 
+    document.getElementById("td_c3").innerHTML = tq
+    document.getElementById("td_n4").innerHTML = rest 
+    document.getElementById("td_r3").innerHTML = 0 
+
     console.log(ob2)
     console.log(`tu cociente es * ${q } y tu divisor es +  ${ r}`)
     console.log(`seugnda pasada tu cociente es ${sq} y tu divisor es ${sr}`) 
     console.log(`tercera pasada tu cociente es ${tq} y tu divisor es ${tc}` )
 
-    let rest = euc(dat1, dat2)
+    
     //let divis = div_dat1(dat1, dat2 )
 
     console.log('tu resultado de euclides es' + rest)
