@@ -1,5 +1,5 @@
 console.log('este es el controlador de Grafos')
-
+//https://matdisc2018-qvsphbvlpf.now.sh
 var xdesde = document.getElementById("inD")
 var xhacia = document.getElementById("inH") 
 var numer = document.getElementById("numerito")
@@ -21,6 +21,13 @@ function grafo(){
     let hacia = obj.xhacia;
 
     console.log(obj)
+
+    costo.push(obj)
+    console.log(costo)
+
+    costo.forEach( function(key){
+        console.log(key)
+    })
   
     nodos.push({ data: { id: desde } });
     nodos.push({ data: { id: hacia } });
