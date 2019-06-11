@@ -4,7 +4,7 @@ $(document).ready(function () {
     let nodesAux = [];
     let edgesAux = [];
 
-      console.log(edgesAux)
+      console.log(edgesAux[0] )
       console.log(nodesAux)
       
     $("#formGrafos").submit(function (event) {
